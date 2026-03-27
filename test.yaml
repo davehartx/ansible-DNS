@@ -14,8 +14,8 @@
   tasks:
   - name: install httpd
     yum:
-      name: “{{target_package}}”
-      state: “{{target_state}}”
+      name: "{{target_package}}"
+      state: "{{target_state}}"
   - name: start httpd
     service:
       name: httpd
