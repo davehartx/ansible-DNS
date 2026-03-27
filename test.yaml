@@ -1,0 +1,23 @@
+#  install python , pip and ansible
+# requirements
+# https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
+#  python --version;apt install pip
+# python3 -m pip install --user ansible
+# echo "PATH=\"$PATH:/root/.local/bin\"">> /etc/environment   #  or whatever the path says
+# pip3 list --user   # expect ansible
+
+- hosts: workstation
+  become: yes
+  vars:
+     target_package: httpd
+     target_state: latest 
+  tasks:
+  - name: install httpd
+    yum:
+      name: “{{target_package}}”
+      state: “{{target_state}}”
+  - name: start httpd
+    service:
+      name: httpd
+      enabled: yes
+      state: started
