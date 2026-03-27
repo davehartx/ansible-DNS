@@ -5,6 +5,11 @@
 # python3 -m pip install --user ansible
 # echo "PATH=\"$PATH:/root/.local/bin\"">> /etc/environment   #  or whatever the path says
 # pip3 list --user   # expect ansible
+# git clone https://github.com/davehartx/ansible-DNS.git
+# git config --global user.name "davehartx" 
+# git config --global user.email "Dave_hartx@hotmail.com"
+# git pull https://github.com/davehartx/ansible-DNS.git   ##    to get latest
+
 
 - hosts: workstation
   become: yes
