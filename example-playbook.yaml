@@ -1,0 +1,6 @@
+# this is the playbook PB for this command
+# ansible -m file -a "dest=/home/ansible/hello state=touch" localhost  ##  file module create hello on localhost
+- name: copy module ex 
+  hosts:  localhost 
+  tasks:
+  - copy: dest=/home/ansible/hello state=touch
