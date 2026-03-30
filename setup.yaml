@@ -1,8 +1,11 @@
+#  Any system , client or server NEEDS ansible  , needs password access to root auth  ie sudo NOPASSWD:ALL
 #  install python , pip and ansible
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
-#  python --version;apt install pip
-# python3 -m pip install --user ansible
+/etc/sudo python --version
+[[ -n `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
+sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase you have multiple versions
+
 # echo "PATH=\"$PATH:/root/.local/bin\"">> /etc/environment   #  or whatever the path says
 # pip3 list --user   # expect ansible
 # git clone https://github.com/davehartx/ansible-DNS.git
