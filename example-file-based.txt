@@ -15,7 +15,6 @@ ansible -m copy -a "dest=/home/cloud_user/hello content='dave is great?'" localh
 ansible -m copy -a "dest=/home/cloud_user/hello content='dave is great'" localhost   --check --diff 
 # timezone 
 ansible -m timezone -a "name=Asia/Tokyo" localhost
-ansible -m timezone -a "name=Europe/London" localhost
 ##   inventory defined  with -i   
 ansible -i 'sys1,' -m commmand -a 'date'  all  #  run date on all systems listed in -i  with the comma , it thinks its a file
 ansible -i 'sys1,' -m commmand -a 'date'  all,localhost  ## if you wanted others as well a -i  list
@@ -30,3 +29,5 @@ inventory=file-where-the-targets-are-listed
     ansible-config  list  ..  some setting in dump output
 
 ansible-inventory --list    ## to list nodes
+ansible -m timezone -a "name=Europe/London" sys1 --become  ##  so elevate as root
+ansible -m timezone -a "name=Europe/London" sys1 --become  --ask-become-pass   ##  for ansible  remote passwd

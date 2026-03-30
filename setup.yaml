@@ -1,9 +1,10 @@
-#  Any system , client or server NEEDS ansible  , needs password access to root auth  ie sudo NOPASSWD:ALL
+# Your user ( ansible) needs passwordless access with root auth  ie sudo NOPASSWD:ALL
 #  install python , pip and ansible
+#  update /etc/environment   to add allowable path to ansible cmd FROM  SOURCE  .. so NOT needed on client , but
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
 /etc/sudo python --version
-[[ -n `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
+[[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
 sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase you have multiple versions
 
 # echo "PATH=\"$PATH:/root/.local/bin\"">> /etc/environment   #  or whatever the path says
@@ -12,6 +13,9 @@ sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase yo
 # git config --global user.name "davehartx" 
 # git config --global user.email "Dave_hartx@hotmail.com"
 # git pull https://github.com/davehartx/ansible-DNS.git   ##    to get latest
+#  TAB completions
+# ansible -m pip -a "name=argcomplete" localhost  ##  if it doesn't work pip install argcomplete
+# then >>  activate-global-python-argcomplete --user
 
 
 - hosts: workstation
