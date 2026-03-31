@@ -36,3 +36,4 @@ sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase yo
       name: httpd
       enabled: yes
       state: started
+# usermod -aG sudo ansible
