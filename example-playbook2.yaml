@@ -7,7 +7,6 @@
   tasks:
   - copy: 
      dest: /home/ansible/hello 
-     content: "world of bunniess"
-     src: /etc/hosts
+     content: "bunnies of the worlid unit"
      
   - command: date
