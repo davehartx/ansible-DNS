@@ -9,3 +9,4 @@
      dest: /home/ansible/hello
      content: "bunnies of the worlid unit"
   - command: date
+  - command: date
