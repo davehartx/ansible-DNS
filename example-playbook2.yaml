@@ -6,5 +6,7 @@
   hosts:  localhost
   tasks:
   - copy: 
-    dest: /home/ansible/hello 
-    content: "world of bunniess"
+     dest=/home/ansible/hello 
+     content="world of bunniess"
+     
+  - command: date

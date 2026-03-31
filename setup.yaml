@@ -16,6 +16,8 @@ sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase yo
 #  TAB completions
 # ansible -m pip -a "name=argcomplete" localhost  ##  if it doesn't work pip install argcomplete
 # then >>  activate-global-python-argcomplete --user
+##    CLEAN OUT SSH
+# echo > .ssh/known_hosts
 
 
 - hosts: workstation
