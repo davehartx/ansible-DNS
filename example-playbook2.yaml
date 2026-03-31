@@ -1,12 +1,19 @@
 # this is the playbook PB for this command
 # ansible -m file -a "dest=/home/ansible/hello state=touch" localhost  ##  file module create hello on localhost
-# no run 
+# no run
 # ansible-playbook   yadayada.yaml -vv  << for verbose
-- name: copy module ex 
+- name: copy module ex
   hosts:  localhost
   tasks:
-  - copy: 
-     dest: /home/ansible/hello 
+  - copy:
+     dest: /home/ansible/hello
+<<<<<<< HEAD
      content: "bunnies of the worlid unit"
-     
+
   - command: date
+=======
+     content: "world of bunniess"
+     src: /etc/hosts
+
+  - command: date
+>>>>>>> f0d17a91d4afe72f3ade11d3818bb09ae075427a
