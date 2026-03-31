@@ -8,6 +8,7 @@
 sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase you have multiple versions
 
 # echo "PATH=\"$PATH:/root/.local/bin\"">> /etc/environment   #  or whatever the path says
+# echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
 # pip3 list --user   # expect ansible
 # git clone https://github.com/davehartx/ansible-DNS.git
 # git config --global user.name "davehartx" 
