@@ -7,6 +7,5 @@
   tasks:
   - copy:
      dest: /home/ansible/hello
-     content: "bunnies of the worlid unit"
-  - command: date
+     content: "bunnies of the world unite"
   - command: date
