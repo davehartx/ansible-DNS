@@ -8,10 +8,13 @@
   - file: 
      dest: /home/ansible
      state: directory
+     owner: ansible
+     group: ansible
+     mode: '0777'
   - copy:
      dest: /home/ansible/hello
      content: "bunnies of the world unite"
      owner: ansible
      group: ansible
-     mode: '1777'
+     mode: '0777'
   - command: date
