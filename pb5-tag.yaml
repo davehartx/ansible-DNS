@@ -3,7 +3,7 @@
 - name: copy module ex
   hosts:  sys1
   tags: taggy    # if this tag is listed   ansible-playbook files.yaml --tags  taggy
-  become:
+  become: true
   tasks:
   - file: 
      dest: /home/ansible
