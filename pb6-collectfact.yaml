@@ -11,9 +11,14 @@
 - name: get some of your fact straight
   hosts:  sys1
   gather_subset: 
-       - '!min'
-       - processor  ##    returns everything
+      - network
+      - hardware
   tasks: 
-    - ansible.builtin.debug:
-       var: ansible_facts  ##    returns everything
+    - name: show system #node-requirement-summary
+      ansible.builtin.debug:
+      msg : 
+      {{ ansible_hostname }} -
+      IP: {{ ansible_default_ipv4.address }},
+      RAM: {{ ansible_memtotal_mb }} MB,
+      CPUs: {{ ansible_processor_vcpus } ##    returns everything
     
