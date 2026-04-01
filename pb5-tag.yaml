@@ -4,6 +4,9 @@
   hosts:  sys1
   tags: taggy    # if this tag is listed   ansible-playbook files.yaml --tags  taggy
   tasks:
+  - file: 
+     dest: /home/ansible
+     state: directory
   - copy:
      dest: /home/ansible/hello
      content: "bunnies of the world unite"
