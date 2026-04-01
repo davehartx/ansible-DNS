@@ -2,7 +2,7 @@
 ##  gather facts
 - name: get all your fact straight
   hosts:  sys1
-  gather_facts: true  ##    returns everything
+  gather_facts: false  ##    returns everything
   tasks: 
     - ansible.builtin.debug:
        var: ansible_facts  ##    returns everything
@@ -11,7 +11,6 @@
 - name: get some of your fact straight
   hosts:  sys1
   gather_subset: 
-       - '!min'
        - processor  ##    returns everything
   tasks: 
     - ansible.builtin.debug:
