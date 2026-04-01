@@ -1,0 +1,9 @@
+---
+##test
+- name: copy module ex
+  hosts:  localhost
+  tasks:
+  - copy:
+     dest: /home/ansible/hello
+     content: "bunnies of the world unite"
+  - command: date

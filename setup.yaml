@@ -1,11 +1,12 @@
+---
 # Your user ( ansible) needs passwordless access with root auth  ie sudo NOPASSWD:ALL
 #  install python , pip and ansible
 #  update /etc/environment   to add allowable path to ansible cmd FROM  SOURCE  .. so NOT needed on client , but
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
-/etc/sudo python --version
-[[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
-sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase you have multiple versions
+# /etc/sudo python --version
+# [[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
+# sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase you have multiple versions
 
 # echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
 # echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
