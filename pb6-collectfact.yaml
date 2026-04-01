@@ -3,7 +3,7 @@
 - name: gt your fact straight
   hosts:  sys1
   gather_facts: true
-  - ansible.buitin.debug:
+  - ansible.builtin.debug:
      var: ansible_facts
 
     
