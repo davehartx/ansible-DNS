@@ -10,7 +10,7 @@
       ##  like  ansible -m setup sys1 -a "filter=ansible_distribution"
       var: ansible_distribution  #   returns this > for example"ansible_distribution": "Ubuntu",
   - name: Only run if OS is Ubuntu
-    when: ansible_distributon  == "Ubuntu"
+    when: ansible_distribution  == "Ubuntu"
     ansible.builtin.apt:
       update_cache: true 
       pkg: 
