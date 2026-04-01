@@ -8,7 +8,8 @@
   tasks:
   - ansible.builtin.apt:
       update_cache: true  ##   aptget update  run  before bind install
-      name: 
+      # name: bind9   ##  if only one package
+      pkg: 
       - "bind9"
       - "nginx"
       tags: bind
