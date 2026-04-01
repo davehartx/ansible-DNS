@@ -30,3 +30,9 @@ inventory=file-where-the-targets-are-listed
     ansible-config  list  ..  some setting in dump output
 
 ansible-inventory --list    ## to list nodes
+
+ansible -m setup sys1 -a "filter=ansible_all*"  ##  extract information about targets  , run without filter for everything
+
+ansible-playbook pb.yml --tag some-tag  --limit=server1     ## << so the limit here limits to run on some nodes  extracted fromthe host: value
+in this  "tagged" job in the pb.yml file
+
