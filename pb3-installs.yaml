@@ -1,0 +1,15 @@
+# this is the playbook PB for this command
+# ansible -m file -a "dest=/home/ansible/hello state=touch" localhost  ##  file module create hello on localhost
+# no run
+# ansible-playbook   yadayada.yaml -vv  << for verbose
+- name: install bind9
+  hosts: sys1
+  tags: bind         ##   so if you add --tags bind   to the PB run  , it only runs   THIS name
+  diff: true         ##   so runs diff even if not on set cmd line PB  command  , you can have diff on task also! 
+  check_mode: true   ##  so doesn't run , just check to see  what would change/etc
+  become: true       ##  become root , either this way or --become on PB command line
+  tasks:
+  - ansible.builtin.apt:
+      update_ cache: true  ##   aptget update  run  before bind install
+      name: bind9
+
