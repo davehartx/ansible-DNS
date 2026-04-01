@@ -10,13 +10,10 @@
 
 - name: get some of your fact straight
   hosts:  sys1
-  gather_subset: 
-      - network
-      - hardware
+  gather_subset:  #https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-gather-subset-for-selective-fact-gathering/view#subset-reference
+      - '!min'
+      - ansible_distribution_version
   tasks: 
     - name: show system #node-requirement-summary
       ansible.builtin.debug:
-      msg: >
-      {{ ansible_hostname }} - IP: {{ ansible_default_ipv4.address }},
-      RAM: {{ ansible_memtotal_mb }} MB,
-      CPUs: {{ ansible_processor_vcpus } ##    returns everything
+        var:ansible_facts
