@@ -5,7 +5,7 @@
   diff: true        
   become: true       ##  become root , either this way or --become on PB command line
   tasks: 
-  - name: dump facts  ## so  get some info in client first!
+ # - name: dump facts  ## so  get some info in client first!
     ansible.builtin.debug:   ## like ansible -m setup .. extacts info
       ## ansible -m setup sys1 -a "filter=ansible_distribution"
       var: ansible_distributon  #   returns this > for example"ansible_distribution": "Ubuntu",
