@@ -1,0 +1,9 @@
+---
+##  gather facts
+- name: gt your fact straight
+  hosts:  sys1
+  gather_facts: true
+  - ansible.buitin.debug:
+     var: ansible_facts
+
+    
