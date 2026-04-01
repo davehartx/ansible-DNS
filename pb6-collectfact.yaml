@@ -11,6 +11,7 @@
 - name: get some of your fact straight
   hosts:  sys1
   gather_subset: 
+       - '!min'
        - processor  ##    returns everything
   tasks: 
     - ansible.builtin.debug:
