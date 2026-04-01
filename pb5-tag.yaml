@@ -5,6 +5,9 @@
   tags: taggy    # if this tag is listed   ansible-playbook files.yaml --tags  taggy
   become: true
   tasks:
+  - group:
+      name: ansible
+      state: present
   - file: 
      dest: /home/ansible
      state: directory
@@ -19,6 +22,4 @@
      mode: '0777'
   - command: date
  # - name: Ensure group "somegroup" exists
-  - group:
-      name: ansible
-      state: present
+  
