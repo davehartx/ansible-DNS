@@ -19,6 +19,7 @@ sudo python3 -m pip install --user ansible ## -m  runs pip as a module incase yo
 # then >>  activate-global-python-argcomplete --user
 ##    CLEAN OUT SSH
 # echo > ~ansible/.ssh/known_hosts
+# echo "StrictHostKeyChecking no" >> ~ansible/.ssh/config   ##  so just just works with OK'ing the new host key
 
 
 - hosts: workstation
