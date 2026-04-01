@@ -17,7 +17,6 @@
     - name: show system #node-requirement-summary
       ansible.builtin.debug:
       msg: >
-      {{ ansible_hostname }} -
-      IP: {{ ansible_default_ipv4.address }},
+      {{ ansible_hostname }} - IP: {{ ansible_default_ipv4.address }},
       RAM: {{ ansible_memtotal_mb }} MB,
       CPUs: {{ ansible_processor_vcpus } ##    returns everything
