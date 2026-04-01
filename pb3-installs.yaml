@@ -12,6 +12,5 @@
       pkg: 
       - "bind9"
       - "nginx"
-      tags: bind
+   
       
-
