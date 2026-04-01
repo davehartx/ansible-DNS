@@ -18,3 +18,7 @@
      group: ansible
      mode: '0777'
   - command: date
+  - name: Ensure group "somegroup" exists
+    ansible.builtin.group:
+      name: ansible
+      state: present
