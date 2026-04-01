@@ -1,7 +1,8 @@
 ---
 ##test
 - name: copy module ex
-  hosts:  localhost
+  hosts:  sys1
+  tags: taggy    # if this tag is listed   ansible-playbook files.yaml --tags  taggy
   tasks:
   - copy:
      dest: /home/ansible/hello
