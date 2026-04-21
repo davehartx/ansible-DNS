@@ -1,6 +1,8 @@
 ---
 # Your user ( ansible) needs passwordless access with root auth  ie sudo NOPASSWD:ALL
-#  install python , pip and ansible
+#  install python , pip , git  and ansible
+#  yum install pip git -y
+#
 #  update /etc/environment   to add allowable path to ansible cmd FROM  SOURCE  .. so NOT needed on client , but
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
