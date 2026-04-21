@@ -1,4 +1,4 @@
-ansible -m ping localhost                     ##  tests ping module at localhost
+ansible -m ping localhost                     ##  tests ping module at localhost x
 # create file
 ansible -m file -a "dest=/home/cloud_user/hello state=touch" localhost  ##  file module create hello on localhost
 # create directory
