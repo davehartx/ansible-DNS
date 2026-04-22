@@ -1,0 +1,15 @@
+---
+- name: Install and start bind9
+  hosts: sys1
+  become: yes
+  tasks:
+    - name: Ensure bind9 is installed
+      ansible.builtin.package:
+        name: bind9
+        state: present
+
+    - name: Ensure bind9 is running
+      ansible.builtin.service:
+        name: bind9
+        state: started
+        enabled: yes
