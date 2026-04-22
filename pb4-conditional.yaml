@@ -6,8 +6,8 @@
   become: true       ##  become root , either this way or --become on PB command line
   tasks: 
   - name: dump facts  ## so  get some info in client first!
-    ansible.builtin.debug:   ## like ansible -m setup .. extacts info
-      ##  like  ansible -m setup sys1 -a "filter=ansible_distribution"
+    ansible.builtin.debug:   ## like ansible -b -m setup .. extacts info
+      ##  like  ansible -b -m setup sys1 -a "filter=ansible_distribution"
       var: ansible_distribution  #   returns this > for example"ansible_distribution": "Ubuntu",
   - name: Only run if OS is Ubuntu
     when: ansible_distribution  == "Ubuntu"
