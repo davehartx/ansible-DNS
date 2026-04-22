@@ -1,0 +1,8 @@
+all:
+  children:
+    webservers:
+      hosts:
+        sys1:
+    dbservers:
+      hosts:
+        sys2:
