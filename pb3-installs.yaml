@@ -10,13 +10,15 @@
     apt:
       update_cache: true  ##   aptget update  run  before bind install 
       pkg: 
- #      - "python-apt"
+        - "python-apt"
         - "bind9"
+ #       - "bind"         #redhat  
         - "nginx"
-        - "bind-utils"
+ #       - "bind-utils"   #redhat
    
 
 
 
  #     name: bind9   
  #     name: nginx  ##  if only one package
+ 
