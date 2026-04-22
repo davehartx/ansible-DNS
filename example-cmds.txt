@@ -20,13 +20,14 @@ ansible -b -m timezone -a "name=Europe/London" localhost
 ansible -i 'sys1,' -b -m command -a 'date'  all  #  run date on all systems listed in -i  with the comma , it thinks its a file
 ansible -i 'sys1,' -b -m command -a 'date'  all,localhost  ## if you wanted others as well a -i  list
 ##  or use files or have 
+#ansible.cfg  file with this >>
 [defaults]
 inventory=file-where-the-targets-are-listed
- in ansible.cfg   in current  directory 
+# no need to specify -i  flag
 
 
- ##   ansible-config  to see your config file   options
-   dump --only-change 
+ ##   ansible-config  to see YOUR config file   options
+   ansible-config dump --only-change       ## lists your changes
     ansible-config  list  ..  some setting in dump output
 
 ansible-inventory --list    ## to list nodes
@@ -36,3 +37,6 @@ ansible -b -m setup sys1 -a "filter=ansible_all*"  ##  extract information about
 ansible-playbook pb.yml --tag some-tag  --limit=server1     ## << so the limit here limits to run on some nodes  extracted fromthe host: value
 in this  "tagged" job in the pb.yml file
 
+##  running mode remotely
+1/  The module is copied over to the target
+2/  module invoked and output returned to master
