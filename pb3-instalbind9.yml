@@ -5,11 +5,11 @@
   tasks:
     - name: Ensure bind9 is installed
       ansible.builtin.package:
-        name: bind9
+        name: bind
         state: present
 
     - name: Ensure bind9 is running
       ansible.builtin.service:
-        name: bind9
+        name: bind
         state: started
         enabled: yes
