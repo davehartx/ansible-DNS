@@ -8,14 +8,15 @@
   tasks:
   - name: install bind & uitls
     apt:
+      update_cache: true  ##   aptget update  run  before bind install 
       pkg: 
  #      - "python-apt"
-        - "bind"
+        - "bind9"
         - "nginx"
         - "bind-utils"
    
 
 
- #     update_cache: true  ##   aptget update  run  before bind install
+
  #     name: bind9   
  #     name: nginx  ##  if only one package
