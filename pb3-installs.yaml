@@ -1,6 +1,6 @@
 
 - name: install bind9
-  hosts: sys1
+  hosts: sys2
   tags: bind         ##   so if you add --tags bind   to the PB run  , it only runs   THIS name
   diff: true         ##   so runs diff even if not on set cmd line PB  command  , you can have diff on task also! 
 #  check_mode: true   ##  so doesn't run , just check to see  what would change/etc
