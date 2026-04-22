@@ -10,6 +10,6 @@
 
     - name: Ensure bind9 is running
       ansible.builtin.service:
-        name: bind
+        name: rpcbind
         state: started
         enabled: yes
