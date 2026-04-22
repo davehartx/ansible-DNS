@@ -5,6 +5,4 @@
 - name: copy module ex 
   hosts:  localhost
   tasks:
-  - copy: 
-    dest: /home/ansible/hello 
-    content: "world of bunniess"
+  - copy: dest=/home/ansible/hello content="world of bunniess"

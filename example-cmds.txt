@@ -11,7 +11,7 @@ ansible -b  -m file -a "dest=NewDirectory state=absent" localhost  ##  file modu
 ansible -b  -m copy -a "src=/home/cloud_user/hello dest=/home/cloud_user/touch2" localhost 
 #  edit file  ..  ensure says dave is great?
 ansible -b -m copy -a "dest=/home/cloud_user/hello content='dave is great?'" localhost 
-#   check  mode before running     check & diff
+#   check  mode before running , does nothing except show ..      check & diff
 ansible  -b  -m copy -a "dest=/home/cloud_user/hello content='dave is great'" localhost   --check --diff 
 # timezone 
 ansible -b -m timezone -a "name=Asia/Tokyo" localhost
@@ -40,3 +40,5 @@ in this  "tagged" job in the pb.yml file
 ##  running mode remotely
 1/  The module is copied over to the target
 2/  module invoked and output returned to master
+##  command completion
+ yum install bash-completion  || apt-get install bash-completion
