@@ -6,13 +6,16 @@
 #  check_mode: true   ##  so doesn't run , just check to see  what would change/etc
   become: true       ##  become root , either this way or --become on PB command line
   tasks:
-  - ansible.builtin.apt:
+  - name: install bind & uitls
+    apt:
+      pkg: 
+ #      - "python-apt"
+        - "bind"
+        - "nginx"
+        - "bind-utils"
+   
+
+
  #     update_cache: true  ##   aptget update  run  before bind install
  #     name: bind9   
-      name: nginx  ##  if only one package
- #     pkg: 
- #     - "python-apt"
- #     - "bind9"
-  #    - "nginx"
-   
-      
+ #     name: nginx  ##  if only one package
