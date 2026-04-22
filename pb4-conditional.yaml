@@ -1,20 +1,18 @@
-
 - name: install bind9
-  hosts: all     ##  so run against all but only run task if the criteria matches
-  tags: bind        
-  diff: true        
-  become: true       ##  become root , either this way or --become on PB command line
-  tasks: 
-  - name: dump facts  ## so  get some info in client first!
-    ansible.builtin.debug:   ## like ansible -b -m setup .. extacts info
-      ##  like  ansible -b -m setup sys1 -a "filter=ansible_distribution"
-      var: ansible_distribution  #   returns this > for example"ansible_distribution": "Ubuntu",
-  - name: Only run if OS is Ubuntu
-    when: ansible_distribution  == "Ubuntu"
-    ansible.builtin.apt:
-      update_cache: true 
-      pkg: 
-      - "bind9"
-      - "nginx"
-   
-      
+  hosts: all ##  so run against all but only run task if the criteria matches
+  tags: bind
+  diff: true
+  become: true ##  become root , either this way or --become on PB command line
+  tasks:
+    - name: dump facts ## so  get some info in client first!
+      ansible.builtin.debug:
+        ## like ansible -b -m setup .. extacts info
+        ##  like  ansible -b -m setup sys1 -a "filter=ansible_distribution"
+        var: ansible_distribution #   returns this > for example"ansible_distribution": "Ubuntu",
+    - name: Only run if OS is Ubuntu
+      when: ansible_distribution  == "Ubuntu"
+      ansible.builtin.apt:
+        update_cache: true
+        pkg:
+          - "bind9"
+          - "nginx"

@@ -42,3 +42,5 @@ in this  "tagged" job in the pb.yml file
 2/  module invoked and output returned to master
 ##  command completion
  yum install bash-completion  || apt-get install bash-completion
+ pip install argcomplete     OR 
+ ansible -m pip -a "name=argcomplete" ;activate-global-python-argcomplete
