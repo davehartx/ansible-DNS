@@ -7,8 +7,9 @@
   become: true       ##  become root , either this way or --become on PB command line
   tasks:
   - ansible.builtin.apt:
-      update_cache: true  ##   aptget update  run  before bind install
-      name: bind9   ##  if only one package
+ #     update_cache: true  ##   aptget update  run  before bind install
+ #     name: bind9   
+      name: nginx  ##  if only one package
  #     pkg: 
  #     - "python-apt"
  #     - "bind9"
