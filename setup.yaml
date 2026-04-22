@@ -25,7 +25,8 @@
 ##    CLEAN OUT SSH
 # echo > ~ansible/.ssh/known_hosts
 # echo "StrictHostKeyChecking no" >> ~ansible/.ssh/config   ##  so just just works with OK'ing the new host key
-
+sed -i '/cloud_user/s/ALL$/NOPASSWD: ALL/' /etc/sudoers.d/90-cloud-init-users
+echo "ansible  ALL=(ALL)  NOPASSWD: ALL" >> /etc/sudoers.d/90-cloud-init-users
 
 - hosts: workstation
   become: yes
