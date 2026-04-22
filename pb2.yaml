@@ -3,9 +3,9 @@
 # no run
 # ansible-playbook   yadayada.yaml -vv  << for verbose
 - name: copy module ex
-  hosts:  localhost
+  hosts:  sys1
   tasks:
   - copy:
      dest: /home/ansible/hello
      content: "bunnies of the world unite"
-  - command: date
+  - command: date   #so see output   add -v   or -vvv   to make clearer
