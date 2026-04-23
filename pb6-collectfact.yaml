@@ -2,19 +2,22 @@
 ##  gather facts
 - name: get all your fact straight
   hosts:  sys1
-  gather_facts: false  ##    returns everything
+  tags: all   #  tag to called on or other
+  gather_facts: false  ##    returns everything , gathers  NOTHING
   tasks: 
     - ansible.builtin.debug:
-       var: ansible_facts  ##    returns everything
+       var: ansible_facts  ##    returns everything found
 
 
 - name: get some of your fact straight
   hosts:  sys1
+  tags: some   #  tag to called on or other
   gather_subset:  # https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-gather-subset-for-selective-fact-gathering/view#subset-reference
-      - '!min'
-      - distribution_version
-      - all_ipv4_addresses 
+      - '!min'    # DO NOT even gather the minimum facts  >>   just collect 
+      - distribution_version               # dist version
+      - all_ipv4_addresses                  # all ipv4 address  and
+      - processor                          # relates to processor
   tasks: 
     #- name: show system #node-requirement-summary
       - ansible.builtin.debug:
-          var: ansible_facts
+          var: ansible_facts ##    returns everything found based on  subset rules above 
