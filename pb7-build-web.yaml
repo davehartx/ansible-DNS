@@ -22,9 +22,11 @@
     ansible.builtin.systemd_service:
       state: started
       name: nginx
+  - name: copy over html
     ansible.builtin.copy:
       src: data/hello.html
       dest: /var/www/html/index.html
+  - name: copy over jpg
     ansible.builtin.copy:
       src: data/download.jpg
       dest: /var/www/html/download.jpg
