@@ -23,7 +23,6 @@
     when: ansible_distribution  == "Centos"
     yum:
       pkg: 
-        - "python-apt"
         - "bind"       
         - "nginx"
         - "bind-utils"   
