@@ -22,6 +22,10 @@
     ansible.builtin.systemd_service:
       state: started
       name: nginx
+  - name: create directory
+    recurse: true
+    state: directory
+    file: /var/www/html
   - name: copy over html
     ansible.builtin.copy:
       src: data/hello.html
