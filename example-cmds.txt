@@ -44,3 +44,7 @@ in this  "tagged" job in the pb.yml file
  yum install bash-completion  || apt-get install bash-completion
  pip install argcomplete     OR 
  ansible -m pip -a "name=argcomplete" ;activate-global-python-argcomplete
+
+   HANDY tips
+   ansible-doc -t keyword become
+   ansible-doc -t keyword becomegather_facts

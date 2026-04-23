@@ -13,7 +13,7 @@
   hosts:  sys1
   tags: some   #  tag to called on or other
   gather_subset:  # https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-gather-subset-for-selective-fact-gathering/view#subset-reference
-      - '!min'    # DO NOT even gather the minimum facts  >>   just collect 
+      - '!min'    # DO NOT even gather the minimum facts  >>   just collect these>>
       - distribution_version               # dist version
       - all_ipv4_addresses                  # all ipv4 address  and
       - processor                          # relates to processor
