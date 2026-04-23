@@ -1,0 +1,29 @@
+
+- name: install bind9 on Centos and Ubuntu
+  hosts: all
+  tags: bind         ##   so if you add --tags bind   to the PB run  , it only runs   THIS name
+  diff: true         ##   so runs diff even if not on set cmd line PB  command  , you can have diff on task also! 
+#  check_mode: true   ##  so doesn't run , just check to see  what would change/etc
+  become: true       ##  become root , either this way or --become on PB command line
+  tasks:
+  - name: dump facts # so  get some info in client first!
+    ansible.builtin.debug:
+        ## like ansible -b -m setup .. extacts info
+        ##  like  ansible -b -m setup sys1 -a "filter=ansible_distribution" # uses=ful to see what you can filter on
+        var: ansible_distribution #   returns this > for example"ansible_distribution": "Ubuntu",
+  - name: Only run if OS is Ubuntu
+    when: ansible_distribution  == "Ubuntu"
+    apt:
+      update_cache: true  ##   aptget update  run  before bind install , equivalent to  "apt update"
+      pkg:    # <<<  pkg or name
+        - "python-apt"
+        - "bind9" 
+        - "nginx"
+  - name: Only run if OS is Centos
+    when: ansible_distribution  == "Centos"
+    yum:
+      pkg: 
+        - "python-apt"
+        - "bind"       
+        - "nginx"
+        - "bind-utils"   
