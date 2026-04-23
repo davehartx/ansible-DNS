@@ -8,22 +8,21 @@
 #  update /etc/environment   to add allowable path to ansible cmd FROM  SOURCE  .. so NOT needed on client , but
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
-# /etc/sudo python --version
-# [[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
-# sudo python3 -b -m pip install --user ansible ## -b -m  runs pip as a module incase you have multiple versions
-
-# echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
-# echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
-# pip3 list --user   # expect ansible
-# git clone https://github.com/davehartx/ansible-DNS.git
-# git config --global user.name "davehartx" 
-# git config --global user.email "Dave_hartx@hotmail.com"
-# git pull https://github.com/davehartx/ansible-DNS.git   ##    to get latest
+/etc/sudo python --version
+[[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
+ sudo python3 -b -m pip install --user ansible ## -b -m  runs pip as a module incase you have multiple versions
+ echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
+ echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
+ pip3 list --user   # expect ansible
+ git clone https://github.com/davehartx/ansible-DNS.git
+ git config --global user.name "davehartx" 
+ git config --global user.email "Dave_hartx@hotmail.com"
+ git pull https://github.com/davehartx/ansible-DNS.git   ##    to get latest
 #  TAB completions
-# ansible -b -m pip -a "name=argcomplete" localhost  ##  if it doesn't work pip install argcomplete
+ ansible -b -m pip -a "name=argcomplete" localhost  ##  if it doesn't work pip install argcomplete
 # then >>  activate-global-python-argcomplete --user
 ##    CLEAN OUT SSH
-# echo > ~ansible/.ssh/known_hosts
+ echo > ~ansible/.ssh/known_hosts
 # echo "StrictHostKeyChecking no" >> ~ansible/.ssh/config   ##  so just just works with OK'ing the new host key
 sed -i '/cloud_user/s/ALL$/NOPASSWD: ALL/' /etc/sudoers.d/90-cloud-init-users
 echo "ansible  ALL=(ALL)  NOPASSWD: ALL" >> /etc/sudoers.d/90-cloud-init-users
