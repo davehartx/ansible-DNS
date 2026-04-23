@@ -1,7 +1,7 @@
 #  install python , pip , git  and ansible
 yum install pip git -y
 hostnamectl set-hostname master
-useradd -m -d /home/ansible  -s /bin/bash ansible
+useradd -m -d /home/ansible  -s /bin/bash ansible;mkdir -p /home/ansible/.ssh
 echo "EDITOR=vi" >> /etc/environment
 echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
 echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
@@ -38,7 +38,7 @@ sudo su - ansible
 # then >>  activate-global-python-argcomplete --user
 ##    CLEAN OUT SSH
  echo > ~ansible/.ssh/known_hosts
-# echo "StrictHostKeyChecking no" >> ~ansible/.ssh/config   ##  so just just works with OK'ing the new host key
+  ##  so just just works with OK'ing the new host key
 sed -i '/cloud_user/s/ALL$/NOPASSWD: ALL/' /etc/sudoers.d/90-cloud-init-users
 echo "ansible  ALL=(ALL)  NOPASSWD: ALL" >> /etc/sudoers.d/90-cloud-init-users
 
