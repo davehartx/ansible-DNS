@@ -26,13 +26,13 @@
     file:
       recurse: true
       state: directory
-      path: /var/www/html
+      path: /usr/share/nginx/html
   - name: copy over html
     ansible.builtin.copy:
       src: data/hello.html
-      dest: /var/www/html/index.html
-  - name: copy over jpg
+      dest: /usr/share/nginx/html/index.html
+  - name: copy over jpg                 ##  no likes tags 
     ansible.builtin.copy:
       src: data/download.jpg
-      dest: /var/www/html/download.jpg
+      dest: /usr/share/nginx/html/download.jpg
 
