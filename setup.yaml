@@ -1,22 +1,37 @@
+#  install python , pip , git  and ansible
+yum install pip git -y
+hostnamectl set-hostname master
+useradd -m -d /home/ansible  -s /bin/bash ansible
+echo "EDITOR=vi" >> /etc/environment
+echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
+echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
+[[ -n `uname -a | grep "\.el" ` ]] && sudo yum install pip -y || sudo apt install pip -y
+ sudo python3 -b -m pip install --user ansible ## -b -m  runs pip as a module incase you have multiple versions
+ mv /root/.local ~ansible/
+chown -R ansible:ansible  ~ansible/.local
+
+
+sudo su - ansible
+
+
+
 # https://app.pluralsight.com/ilx/video-courses/ansible-getting-started/course-overview
 
 ---
 # Your user ( ansible) needs passwordless access with root auth  ie sudo NOPASSWD:ALL
-#  install python , pip , git  and ansible
-#  yum install pip git -y
+
+
 #
 #  update /etc/environment   to add allowable path to ansible cmd FROM  SOURCE  .. so NOT needed on client , but
 # requirements
 # https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html#node-requirement-summary
 /etc/sudo python --version
-[[ -e `grep Red /etc/redhat-release` ]] && sudo yum install pip -y || sudo apt install pip -y
- sudo python3 -b -m pip install --user ansible ## -b -m  runs pip as a module incase you have multiple versions
- echo "PATH=\"$PATH:/home/ansible/.local/bin\"">> /etc/environment   #  or whatever the path says
- echo "export EDITOR=vi">> /etc/environment   #  or whatever the path says
+
  pip3 list --user   # expect ansible
  git clone https://github.com/davehartx/ansible-DNS.git
  git config --global user.name "davehartx" 
  git config --global user.email "Dave_hartx@hotmail.com"
+ cd ansible-DNS
  git pull https://github.com/davehartx/ansible-DNS.git   ##    to get latest
 #  TAB completions
  ansible -b -m pip -a "name=argcomplete" localhost  ##  if it doesn't work pip install argcomplete
