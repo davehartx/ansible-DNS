@@ -8,7 +8,7 @@
     ansible.builtin.debug:
         var: ansible_distribution #   returns this > for example"ansible_distribution": "Ubuntu",
   - name: Only run if OS is Ubuntu
-    command: ufw allow 'Nginx HTTP'   # multiple
+ #   command: ufw allow 'Nginx HTTP'   # multiple
     apt:
       update_cache: true  ##   aptget update  run  before bind install , equivalent to  "apt update"
       pkg:    # <<<  pkg or name
@@ -19,7 +19,7 @@
     yum:
       pkg:  
         - "nginx"
-  - name: Make sure a service unit is running
+  - name: Make sure a service unit is runnings
     ansible.builtin.systemd_service:
       state: started
       name: nginx
