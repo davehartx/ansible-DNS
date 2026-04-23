@@ -33,7 +33,6 @@
       dest: /var/www/html/index.html
   - name: copy over jpg
     ansible.builtin.copy:
-      tags: download
       src: data/download.jpg
       dest: /var/www/html/download.jpg
 
