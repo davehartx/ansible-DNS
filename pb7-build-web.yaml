@@ -13,7 +13,7 @@
       update_cache: true  ##   aptget update  run  before bind install , equivalent to  "apt update"
       pkg:    # <<<  pkg or name
         - "nginx"
-      command: ufw allow 'Nginx HTTP'
+    command: ufw allow 'Nginx HTTP'   # multiple 
   - name: Only run if OS is Centos
     when: ansible_distribution  == "Centos"
     yum:
