@@ -2,7 +2,7 @@
 - name: Build website Centos and Ubuntu
   hosts: all       ##   so if you add --tags bind   to the PB run  , it only runs   THIS name
   diff: true        
-  check: true    #   like --check  on th playbook run  
+  check_mode: true    #   like --check  on th playbook run  
   become: true       
   tasks:
   - name: dump facts # so  get some info in client first!
